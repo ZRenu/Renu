@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>throttle</title>
+</head>
+
+<body>
+    <h1>节流策略是将高频操作,按周期执行，一个timeout周期内执行一次，如果第一个周期执行完，有新的操作进来进行另一个周期。</h1>
+    <input type="text" name="" id="input1">
+    <script>
+        const input = document.getElementById('input1')
+        function throttle(fn, delay = 100) {
+            let begin = 0
+            return function () {
+                let cur = new Date().getTime()
+                if (cur - begin > delay) {
+                    fn.apply(this, arguments)
+                    begin = cur
+                }
+            }
+        }
+        input.addEventListener('keyup', throttle(() => {
+            console.log(input.value)
+        }, 500))
+    </script>
+</body>
+
+</html>

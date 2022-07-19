@@ -21,7 +21,7 @@ export default {
         },
         info: {
             handler(oldval, val) {
-                console.log('watch info', oldval, val) //引用类型,类型可拿不到oldval
+                console.log('watch info', oldval.city, val.city) //引用类型,类型可拿不到oldval，因为指针地址相同
             },
             deep: true //深度监听
         }

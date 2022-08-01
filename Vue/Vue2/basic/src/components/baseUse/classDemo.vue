@@ -26,10 +26,10 @@ export default {
 </script>
 <style scoped>
 .black {
-    color: rgb(232, 197, 25);
+    color: rgb(11, 133, 102);
 }
 
 .yellow {
-    font-size: 20px;
+    font-size: 40px;
 }
 </style>

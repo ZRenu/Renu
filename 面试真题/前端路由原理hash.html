@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p>
+            hash特点
+        </p>
+        <ul>
+            <li>hash变化会触发网页跳转，即浏览器前进后退</li>
+            <li>hash变化不会刷新页面，SPA的必须特点</li>
+            <li>hash用于不会提交到serve端</li>
+        </ul>
+    </div>
+    <button id="btn1">修改url</button>
+
+    <script>
+        window.onhashchange = (event) => [
+            console.log('old url', event.oldURL),
+            console.log('new url', event.newURL),
+            console.log('hash', location.hash)
+        ]
+        // 页面初次加载，获取hash
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('hash:', location.hash)
+        })
+        // JS修改url
+        document.getElementById('btn1').addEventListener('click', () => {
+            location.href = '#/user'
+        })
+    </script>
+
+</body>
+
+</html>

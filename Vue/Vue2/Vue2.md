@@ -38,7 +38,7 @@ v-for和v-if不建议一起用，因为v-for优先级高
 - 常见的表单项 textarea checkbox radio select
 - 修饰符lazy number trim
 
-## 组件使用(componentsDemo/*)
+## 组件使用(ComponentsDemo/*)
 
 - props(子组件向父组件传递数据)和$emit（父组件触发子组件的事件）
 - 组件间通讯-自定义事件(vue本身就有实现自定义实现的能力)
@@ -52,9 +52,9 @@ v-for和v-if不建议一起用，因为v-for优先级高
 
 ### 父子组件生命周期
 
-## Vue高级特性 advancedUse
+## Vue高级特性
 
-### 自定义v-model
+### 自定义v-model(VModel)
 
 ### $nextTick
 
@@ -68,12 +68,12 @@ v-for和v-if不建议一起用，因为v-for优先级高
 - 父组件获取子组件的数据
 - 具名插槽
 
-### 动态组件
+### 动态组件 (Dynamic)
 
 - :is="conponent-name"用法
 - 需要根据数据，动态渲染的场景，即组件类型不确定
 
-### 异步组件
+### 异步组件(Asyn)
 
 - import()函数
 - 按需加载，异步加载大组件
@@ -91,3 +91,41 @@ v-for和v-if不建议一起用，因为v-for优先级高
 - Vue3提出的Composition API旨在解决这些问题
 
 ## Vuex
+
+- state
+- getters
+- action
+- mutation
+- dispatch
+- commit
+- mapState
+- mapGetters
+- mapActions
+- mapMutations
+
+## vue-router
+
+### 路由模式
+
+- hash模式（默认）如'http://abc.com/#/user/10'
+- H5 history模式，如 'http://abc.com/user/20'(需要server端支持，因此无特殊需求可选前者)
+
+### 路由配置（动态路由，懒加载）
+
+```js
+const User =  {
+// 获取参数
+template:'<div>User {{$router.params.id}}</div>'
+}
+
+const router = new VueRouter({
+    routes:[
+        // 动态路径参数，以冒号开头
+        {path:'/user/:id',component:User}
+    ]
+})
+
+// 懒加载
+ {path:'/user/:id',component:()=>import('./..component/User')}
+```
+

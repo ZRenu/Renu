@@ -1,11 +1,11 @@
 export default {
     data() {
         return {
-            city: 'shanghai'
+            city: 'SH'
         }
     },
     methods: {
-        showName() {
+        show() {
             console.log(this.name)
         }
     },

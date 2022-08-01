@@ -19,7 +19,7 @@
         <input type="radio" id="female" value="female" v-model="gender" />
         <label for="female">男</label>
         <p>下拉列表{{ selected }}</p>
-        <select v-model="selectedList" multiple>
+        <select v-model="selected" multiple>
             <option value="" disabled>请选择</option>
             <option>A</option>
             <option>B</option>

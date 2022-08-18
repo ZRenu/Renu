@@ -10,10 +10,12 @@
     <p>自定义v-model</p>
     <p>{{ name }}</p>
     <VModelIndex v-model="name" />
+    <p>{{ count }}</p>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 // import SlotIndex from '../components/Slot/SlotIndex.vue';
 // import DynamicIndex from '../components/Dynamic/DynamicIndex.vue';
 // import AsynIndex from '../components/Asyn/AsynIndex.vue';
@@ -38,6 +40,10 @@ export default {
     return {
       name: 'Renu'
     }
+  },
+  computed: {
+    ...mapState(['count'])
   }
+
 };
 </script>
